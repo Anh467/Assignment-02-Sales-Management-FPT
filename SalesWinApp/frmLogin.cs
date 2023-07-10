@@ -51,10 +51,10 @@ namespace SalesWinApp
         }
         public void test()
         {
-            //txt_email.Text = "van123@gmail.com";
-            //txt_pass.Text = "viet123";
-            txt_email.Text = "admin@fstore.com";
-            txt_pass.Text = "admin@@";
+            txt_email.Text = "van123@gmail.com";
+            txt_pass.Text = "viet123";
+            //txt_email.Text = "admin@fstore.com";
+           // txt_pass.Text = "admin@@";
         }
 
 
@@ -62,17 +62,20 @@ namespace SalesWinApp
         {
             if (!CheckFillInput()) return;
             var credential = GetLoginCredetial();
-            if (CheckIsAdmin(GetAdminAccount(), credential))
-            {
-                new frmMain(true).Show();
-                //this.Hide();
+            if (CheckIsAdmin(GetAdminAccount(), credential)) { 
+                this.Hide();
+                new frmMain(true).ShowDialog();
+                this.Show();
+                MessageBox.Show("Logout!!!");
                 return;
             }
             Member member = memberRepository.CheckExistAccount(credential.Item1, credential.Item2);
             if (member!=null)
             {
-                new frmMain(member).Show();
-                //this.Hide();
+                this.Hide();
+                new frmMain(member).ShowDialog();
+                this.Show();
+                MessageBox.Show("Logout!!!");
                 return;
             }
             MessageBox.Show("!!!Credential that you enter didn't right!!!");
@@ -80,7 +83,16 @@ namespace SalesWinApp
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+        }
 
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            txt_pass.UseSystemPasswordChar= false;
+        }
+
+        private void btn_Show_MouseLeave(object sender, EventArgs e)
+        {
+            txt_pass.UseSystemPasswordChar = true;
         }
     }
 }

@@ -84,42 +84,42 @@
             // tsmi_Member
             // 
             this.tsmi_Member.Name = "tsmi_Member";
-            this.tsmi_Member.Size = new System.Drawing.Size(224, 26);
+            this.tsmi_Member.Size = new System.Drawing.Size(152, 26);
             this.tsmi_Member.Text = "Member";
             this.tsmi_Member.Click += new System.EventHandler(this.memberToolStripMenuItem_Click);
             // 
             // orderrToolStripMenuItem
             // 
             this.orderrToolStripMenuItem.Name = "orderrToolStripMenuItem";
-            this.orderrToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.orderrToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.orderrToolStripMenuItem.Text = "Orderr";
             this.orderrToolStripMenuItem.Click += new System.EventHandler(this.orderrToolStripMenuItem_Click);
             // 
             // productToolStripMenuItem
             // 
             this.productToolStripMenuItem.Name = "productToolStripMenuItem";
-            this.productToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.productToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.productToolStripMenuItem.Text = "Product";
             this.productToolStripMenuItem.Click += new System.EventHandler(this.productToolStripMenuItem_Click);
             // 
             // categoryToolStripMenuItem
             // 
             this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
-            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.categoryToolStripMenuItem.Text = "Category";
             this.categoryToolStripMenuItem.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
             // 
             // tsmi_Cart
             // 
             this.tsmi_Cart.Name = "tsmi_Cart";
-            this.tsmi_Cart.Size = new System.Drawing.Size(224, 26);
+            this.tsmi_Cart.Size = new System.Drawing.Size(152, 26);
             this.tsmi_Cart.Text = "Cart";
             this.tsmi_Cart.Click += new System.EventHandler(this.tsmi_Cart_Click);
             // 
             // tsmi_Statistic
             // 
             this.tsmi_Statistic.Name = "tsmi_Statistic";
-            this.tsmi_Statistic.Size = new System.Drawing.Size(224, 26);
+            this.tsmi_Statistic.Size = new System.Drawing.Size(152, 26);
             this.tsmi_Statistic.Text = "Statistic";
             this.tsmi_Statistic.Click += new System.EventHandler(this.statisticToolStripMenuItem_Click);
             // 
@@ -131,6 +131,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "frmMain";
             this.Text = "frmMain";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

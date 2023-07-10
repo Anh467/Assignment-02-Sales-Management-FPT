@@ -34,18 +34,19 @@
             this.lbl_pass = new System.Windows.Forms.Label();
             this.btn_login = new System.Windows.Forms.Button();
             this.btn_SignUp = new System.Windows.Forms.Button();
+            this.btn_Show = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(144, 44);
+            this.txt_email.Location = new System.Drawing.Point(95, 44);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(268, 27);
             this.txt_email.TabIndex = 0;
             // 
             // txt_pass
             // 
-            this.txt_pass.Location = new System.Drawing.Point(144, 117);
+            this.txt_pass.Location = new System.Drawing.Point(95, 117);
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.Size = new System.Drawing.Size(268, 27);
             this.txt_pass.TabIndex = 1;
@@ -88,11 +89,23 @@
             this.btn_SignUp.Text = "Sign up";
             this.btn_SignUp.UseVisualStyleBackColor = true;
             // 
+            // btn_Show
+            // 
+            this.btn_Show.Location = new System.Drawing.Point(369, 115);
+            this.btn_Show.Name = "btn_Show";
+            this.btn_Show.Size = new System.Drawing.Size(62, 29);
+            this.btn_Show.TabIndex = 6;
+            this.btn_Show.Text = "show";
+            this.btn_Show.UseVisualStyleBackColor = true;
+            this.btn_Show.MouseLeave += new System.EventHandler(this.btn_Show_MouseLeave);
+            this.btn_Show.MouseHover += new System.EventHandler(this.button1_MouseHover);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 252);
+            this.Controls.Add(this.btn_Show);
             this.Controls.Add(this.btn_SignUp);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.lbl_pass);
@@ -115,5 +128,6 @@
         private Label lbl_pass;
         private Button btn_login;
         private Button btn_SignUp;
+        private Button btn_Show;
     }
 }

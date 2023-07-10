@@ -38,11 +38,9 @@ namespace SalesWinApp
             var sum = orderDetails.Join(orderrstatic, x => x.OrderId, y => y.OrderId, (x, y) => new { x.Quantity, x.ProductId, x.Discount })
                     .GroupJoin(products, xx => xx.ProductId, yy => yy.ProductId, (xx, yy) => new { xx.Discount, xx.Quantity, yy.FirstOrDefault()?.UnitPrice });
                     
-            txt_Total.Text = sum.Sum(x => (x.Quantity * x.UnitPrice - ((decimal)x.Discount))).ToString();
+            txt_Total.Text = sum.Sum(x => (x.Quantity * x.UnitPrice * (1 -(decimal)x.Discount))).ToString();
             txt_NumOrder.Text = orderrstatic.Count.ToString();
             txt_NumProduct.Text = sum.Sum(x => (x.Quantity)).ToString();
-
-
         }
         private void frmStatistic_Load(object sender, EventArgs e)
         {
@@ -86,5 +84,16 @@ namespace SalesWinApp
             LoadDataGridView();
         }
 
+        private void dgv_Statistic_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dgv_Statistic.Rows[e.RowIndex];
+                int orderID = Convert.ToInt32(selectedRow.Cells["OrderID"].Value.ToString());
+                frmOrderDetail frm = new frmOrderDetail(orderrRepository.GetOrderrByID(orderID), true);
+                frm.ShowDialog();
+            }
+           
+        }
     }
 }

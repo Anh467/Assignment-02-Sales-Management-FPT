@@ -84,10 +84,11 @@ namespace SalesWinApp
                                                 Contry = txt_Country.Text,
                                                 Password = txt_Password.Text
                                             };
-        public bool IsValidEmail(string email)
+        public void IsValidEmail(string email)
         {
             string pattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
-            return Regex.IsMatch(email, pattern);
+            if (!Regex.IsMatch(email, pattern))
+                throw new Exception("Email format fail");
         }
         private void Insert(Member member)
         {
@@ -117,6 +118,7 @@ namespace SalesWinApp
             if (isAdmin) { 
                 try
                 {
+                    IsValidEmail(member.Email);
                     if (isInsert)
                     {
                         Insert(member);
@@ -140,6 +142,7 @@ namespace SalesWinApp
             {
                 try
                 {
+                    IsValidEmail(member.Email);
                     Modify(member);
                     MessageBox.Show("!!!Update successfull!!!\n" + member.ToString());
                 }
@@ -165,5 +168,9 @@ namespace SalesWinApp
             this.Close();
         }
 
+        private void frmMemberDetail_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

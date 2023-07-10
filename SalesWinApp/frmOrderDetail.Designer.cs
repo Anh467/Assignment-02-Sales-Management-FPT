@@ -57,6 +57,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.Button = new System.Windows.Forms.GroupBox();
             this.btn_Cancle = new System.Windows.Forms.Button();
+            this.lbl_total = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_OrderDetail)).BeginInit();
             this.Order.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -115,6 +116,7 @@
             // 
             // Order
             // 
+            this.Order.Controls.Add(this.lbl_total);
             this.Order.Controls.Add(this.dtp_ShippedDate);
             this.Order.Controls.Add(this.txt_OrderID);
             this.Order.Controls.Add(this.dtp_RequiredDate);
@@ -134,21 +136,21 @@
             // 
             // dtp_ShippedDate
             // 
-            this.dtp_ShippedDate.Location = new System.Drawing.Point(124, 160);
+            this.dtp_ShippedDate.Location = new System.Drawing.Point(124, 142);
             this.dtp_ShippedDate.Name = "dtp_ShippedDate";
             this.dtp_ShippedDate.Size = new System.Drawing.Size(250, 27);
             this.dtp_ShippedDate.TabIndex = 32;
             // 
             // txt_OrderID
             // 
-            this.txt_OrderID.Location = new System.Drawing.Point(124, 59);
+            this.txt_OrderID.Location = new System.Drawing.Point(124, 41);
             this.txt_OrderID.Name = "txt_OrderID";
             this.txt_OrderID.Size = new System.Drawing.Size(125, 27);
             this.txt_OrderID.TabIndex = 27;
             // 
             // dtp_RequiredDate
             // 
-            this.dtp_RequiredDate.Location = new System.Drawing.Point(124, 209);
+            this.dtp_RequiredDate.Location = new System.Drawing.Point(124, 191);
             this.dtp_RequiredDate.Name = "dtp_RequiredDate";
             this.dtp_RequiredDate.Size = new System.Drawing.Size(250, 27);
             this.dtp_RequiredDate.TabIndex = 31;
@@ -156,7 +158,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 66);
+            this.label1.Location = new System.Drawing.Point(24, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 20);
             this.label1.TabIndex = 21;
@@ -164,7 +166,7 @@
             // 
             // dtp_OrderDate
             // 
-            this.dtp_OrderDate.Location = new System.Drawing.Point(124, 110);
+            this.dtp_OrderDate.Location = new System.Drawing.Point(124, 92);
             this.dtp_OrderDate.Name = "dtp_OrderDate";
             this.dtp_OrderDate.Size = new System.Drawing.Size(250, 27);
             this.dtp_OrderDate.TabIndex = 30;
@@ -173,7 +175,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 214);
+            this.label2.Location = new System.Drawing.Point(22, 196);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 20);
             this.label2.TabIndex = 22;
@@ -181,7 +183,7 @@
             // 
             // txt_Frieght
             // 
-            this.txt_Frieght.Location = new System.Drawing.Point(124, 261);
+            this.txt_Frieght.Location = new System.Drawing.Point(124, 243);
             this.txt_Frieght.Name = "txt_Frieght";
             this.txt_Frieght.Size = new System.Drawing.Size(125, 27);
             this.txt_Frieght.TabIndex = 29;
@@ -189,7 +191,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 165);
+            this.label4.Location = new System.Drawing.Point(22, 147);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 20);
             this.label4.TabIndex = 24;
@@ -198,7 +200,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 115);
+            this.label5.Location = new System.Drawing.Point(22, 97);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 20);
             this.label5.TabIndex = 25;
@@ -207,7 +209,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 264);
+            this.label6.Location = new System.Drawing.Point(22, 246);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 20);
             this.label6.TabIndex = 26;
@@ -336,6 +338,15 @@
             this.btn_Cancle.UseVisualStyleBackColor = true;
             this.btn_Cancle.Click += new System.EventHandler(this.btn_Cancle_Click);
             // 
+            // lbl_total
+            // 
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Location = new System.Drawing.Point(140, 282);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(50, 20);
+            this.lbl_total.TabIndex = 33;
+            this.lbl_total.Text = "label3";
+            // 
             // frmOrderDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -389,5 +400,6 @@
         private Label label7;
         private GroupBox Button;
         private Button btn_Cancle;
+        private Label lbl_total;
     }
 }

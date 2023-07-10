@@ -67,6 +67,7 @@
             this.dgv_Statistic.RowTemplate.Height = 29;
             this.dgv_Statistic.Size = new System.Drawing.Size(822, 443);
             this.dgv_Statistic.TabIndex = 0;
+            this.dgv_Statistic.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Statistic_CellMouseDoubleClick);
             // 
             // dtp_From
             // 

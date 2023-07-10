@@ -17,6 +17,7 @@ namespace SalesWinApp
         IOrderDetailRepository orderDetailRepository= new OrderDetailRepository();
         IMemberRepository memberRepository= new MemberRepository();
         IOrderrRepository orderrRepository = new OrderrRepository();
+        IProductRepository productRepository= new ProductRepository();
         bool isAdmin;
         public frmOrderDetail( Orderr orderr, bool isAdmin)
         {
@@ -70,8 +71,13 @@ namespace SalesWinApp
         {
             try
             {
+                IEnumerable<OrderDetail> orders = orderDetailRepository.GetOrderDetailByID(Convert.ToInt32(txt_OrderID.Text));
+                IEnumerable<Product> products = productRepository.GetProducts();
+                var sum = ((List< OrderDetail>)orders)
+                    .GroupJoin(products, xx => xx.ProductId, yy => yy.ProductId, (xx, yy) => new { xx.Discount, xx.Quantity, yy.FirstOrDefault()?.UnitPrice });
+                lbl_total.Text = "Total: " + sum.Sum(x => (x.Quantity * x.UnitPrice * (1 - (decimal)x.Discount))).ToString();
                 bindingSource = new BindingSource();
-                bindingSource.DataSource= orderDetailRepository.GetOrderDetailByID(Convert.ToInt32(txt_OrderID.Text));
+                bindingSource.DataSource = orders;
                 dgv_OrderDetail.DataSource = bindingSource;
                 SetOder(orderrRepository.GetOrderrByID(Convert.ToInt32(txt_OrderID.Text)));
                 dgv_OrderDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

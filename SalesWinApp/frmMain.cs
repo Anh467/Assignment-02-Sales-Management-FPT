@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessObject.Models;
+using DataAccess.Repository;
 namespace SalesWinApp
 {
     public partial class frmMain : Form
     {
+        IMemberRepository memberRepository= new MemberRepository(); 
         List<OrderDetail> cart;
         private bool isAdmin;
         Member member;
@@ -69,7 +71,7 @@ namespace SalesWinApp
             }
             else
             {
-                frmMemberDetail frm = new frmMemberDetail(member);
+                frmMemberDetail frm = new frmMemberDetail(memberRepository.GetMemberByID(member.MemberId));
                 frm.MdiParent = this;
                 frm.Show();
             }
@@ -133,5 +135,9 @@ namespace SalesWinApp
             }
         }
 
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
