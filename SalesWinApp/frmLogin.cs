@@ -51,10 +51,10 @@ namespace SalesWinApp
         }
         public void test()
         {
-            txt_email.Text = "van123@gmail.com";
-            txt_pass.Text = "viet123";
-            //txt_email.Text = "admin@fstore.com";
-           // txt_pass.Text = "admin@@";
+            //txt_email.Text = "van123@gmail.com";
+            //txt_pass.Text = "viet123";
+            txt_email.Text = "admin@fstore.com";
+           txt_pass.Text = "admin@@";
         }
 
 
